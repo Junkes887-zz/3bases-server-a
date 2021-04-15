@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/Junkes887/3bases/server-base-a/crypt"
-	"github.com/Junkes887/3bases/server-base-a/model"
+	"github.com/Junkes887/3bases-server-a/builder"
+	"github.com/Junkes887/3bases-server-a/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -16,7 +16,7 @@ type Client struct {
 }
 
 func (client Client) Save(usuario model.UsuarioDecrypt) {
-	usuarioEncrypt := crypt.EncryptUsuario(usuario)
+	usuarioEncrypt := builder.EncryptUsuario(usuario)
 
 	_, err := client.DB.InsertOne(client.CTX, usuarioEncrypt)
 	if err != nil {
@@ -49,7 +49,7 @@ func (client Client) Find(cpf string) model.UsuarioDecrypt {
 	cur.Close(client.CTX)
 
 	for _, usuario := range usuarios {
-		usuarioDecrypt := crypt.DecryptUsuario(usuario, cpf)
+		usuarioDecrypt := builder.DecryptUsuario(usuario, cpf)
 		if usuarioDecrypt.CPF != "" {
 			return usuarioDecrypt
 		}

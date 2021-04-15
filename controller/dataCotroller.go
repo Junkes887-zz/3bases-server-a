@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/Junkes887/3bases/server-base-a/model"
-	"github.com/Junkes887/3bases/server-base-a/repository"
+	"github.com/Junkes887/3bases-server-a/model"
+	"github.com/Junkes887/3bases-server-a/repository"
 	"github.com/julienschmidt/httprouter"
 	"go.mongodb.org/mongo-driver/mongo"
 )

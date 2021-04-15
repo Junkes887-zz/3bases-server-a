@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Junkes887/3bases/server-base-a/controller"
-	"github.com/Junkes887/3bases/server-base-a/database"
-	"github.com/Junkes887/3bases/server-base-a/repository"
+	"github.com/Junkes887/3bases-server-a/controller"
+	"github.com/Junkes887/3bases-server-a/database"
+	"github.com/Junkes887/3bases-server-a/repository"
 	"github.com/joho/godotenv"
 	"github.com/julienschmidt/httprouter"
 	"github.com/rs/cors"
