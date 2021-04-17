@@ -3,6 +3,8 @@ github.com/Junkes887/3bases-artifacts v0.0.0-20210415222948-02610fa10295 h1:WNFx
 github.com/Junkes887/3bases-artifacts v0.0.0-20210415222948-02610fa10295/go.mod h1:MBeYj6NnLigd/fXogbcEjC9N3+dwa31ZUwTtBjBiyoY=
 github.com/Junkes887/3bases-artifacts v0.0.0-20210415225201-eed793af2c67 h1:skHi9PH3AIKNQ35ynHgaSgiXyqnP6WVvWeXuOyWyKUQ=
 github.com/Junkes887/3bases-artifacts v0.0.0-20210415225201-eed793af2c67/go.mod h1:MBeYj6NnLigd/fXogbcEjC9N3+dwa31ZUwTtBjBiyoY=
+github.com/Junkes887/3bases-artifacts v0.0.0-20210416031429-5070950e908a h1:DLPSydfjk5IXr94XyABrfVSsWomUJrrnHO0AWHXOzTw=
+github.com/Junkes887/3bases-artifacts v0.0.0-20210416031429-5070950e908a/go.mod h1:MBeYj6NnLigd/fXogbcEjC9N3+dwa31ZUwTtBjBiyoY=
 github.com/aws/aws-sdk-go v1.34.28 h1:sscPpn/Ns3i0F4HPEWAVcwdIRaZZCuL7llJ2/60yPIk=
 github.com/aws/aws-sdk-go v1.34.28/go.mod h1:H7NKnBqNVzoTJpGfLrQkkD+ytBA93eiDYi/+8rV9s48=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

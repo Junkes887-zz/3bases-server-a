@@ -1,15 +1,19 @@
 package model
 
+import "go.mongodb.org/mongo-driver/bson/primitive"
+
 type UsuarioDecrypt struct {
-	CPF         string   `json:"cpf"`
-	Nome        string   `json:"nome"`
-	Endereco    string   `json:"endereco"`
-	ListDividas []string `json:"listDividas"`
+	ID          primitive.ObjectID `json:"id" bson:"_id,omitempty"`
+	CPF         string             `json:"cpf"`
+	Nome        string             `json:"nome"`
+	Endereco    string             `json:"endereco"`
+	ListDividas []string           `json:"listDividas"`
 }
 
 type UsuarioEncrypt struct {
-	CPF         []byte   `bson:"cpf"`
-	Nome        []byte   `bson:"nome"`
-	Endereco    string   `bson:"endereco"`
-	ListDividas []string `bson:"listDividas"`
+	ID          primitive.ObjectID `json:"id" bson:"_id,omitempty"`
+	CPF         []byte             `bson:"cpf"`
+	Nome        []byte             `bson:"nome"`
+	Endereco    string             `bson:"endereco"`
+	ListDividas []string           `bson:"listDividas"`
 }

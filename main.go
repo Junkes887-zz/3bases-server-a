@@ -32,22 +32,28 @@ func injects(collection *mongo.Collection, context context.Context) controller.C
 
 func main() {
 	godotenv.Load()
-	port := os.Getenv("PORT")
+	PORT := os.Getenv("PORT")
+	DATABASE := os.Getenv("DATABASE")
+	COLLECTION := os.Getenv("COLLECTION")
 	context := context.Background()
 
 	database := database.Context{CTX: context}
 	client := database.CreateConnection()
-	collection := client.Database("local").Collection("usuarios")
+
+	collection := client.Database(DATABASE).Collection(COLLECTION)
 
 	controller := injects(collection, context)
 
 	router := httprouter.New()
-	router.GET("/:cpf", controller.Find)
+	router.GET("/", controller.FindAll)
+	router.GET("/:id", controller.Find)
 	router.POST("/", controller.Save)
+	router.PUT("/:id", controller.Upadate)
+	router.DELETE("/:id", controller.Delete)
 
 	c := cors.AllowAll()
 	handlerCors := c.Handler(router)
 
-	fmt.Println("Listem " + port + ".....")
-	http.ListenAndServe(":"+port, handlerCors)
+	fmt.Println("Listem " + PORT + ".....")
+	http.ListenAndServe(":"+PORT, handlerCors)
 }

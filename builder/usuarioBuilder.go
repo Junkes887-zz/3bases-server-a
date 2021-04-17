@@ -7,17 +7,19 @@ import (
 
 func EncryptUsuario(usuario model.UsuarioDecrypt) model.UsuarioEncrypt {
 	return model.UsuarioEncrypt{
-		CPF:         artifacts.Encrypt(usuario.CPF, usuario.CPF),
-		Nome:        artifacts.Encrypt(usuario.Nome, usuario.CPF),
+		ID:          usuario.ID,
+		CPF:         artifacts.Encrypt(usuario.CPF),
+		Nome:        artifacts.Encrypt(usuario.Nome),
 		Endereco:    usuario.Endereco,
 		ListDividas: usuario.ListDividas,
 	}
 }
 
-func DecryptUsuario(usuario model.UsuarioEncrypt, cpf string) model.UsuarioDecrypt {
+func DecryptUsuario(usuario model.UsuarioEncrypt) model.UsuarioDecrypt {
 	return model.UsuarioDecrypt{
-		CPF:         artifacts.Decrypt(usuario.CPF, cpf),
-		Nome:        artifacts.Decrypt(usuario.Nome, cpf),
+		ID:          usuario.ID,
+		CPF:         artifacts.Decrypt(usuario.CPF),
+		Nome:        artifacts.Decrypt(usuario.Nome),
 		Endereco:    usuario.Endereco,
 		ListDividas: usuario.ListDividas,
 	}

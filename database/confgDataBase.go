@@ -13,7 +13,6 @@ type Context struct {
 	CTX context.Context
 }
 
-// CreateConnection Cria conexão com o banco
 func (context Context) CreateConnection() *mongo.Client {
 	DATABASE_URL := os.Getenv("DATABASE_URL")
 
