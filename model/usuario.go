@@ -7,13 +7,21 @@ type UsuarioDecrypt struct {
 	CPF         string             `json:"cpf"`
 	Nome        string             `json:"nome"`
 	Endereco    string             `json:"endereco"`
-	ListDividas []string           `json:"listDividas"`
+	ListDividas []DividaDecrypt    `json:"listDividas"`
+}
+
+type DividaDecrypt struct {
+	Descricao string `json:"descricao"`
 }
 
 type UsuarioEncrypt struct {
 	ID          primitive.ObjectID `json:"id" bson:"_id,omitempty"`
 	CPF         []byte             `bson:"cpf"`
 	Nome        []byte             `bson:"nome"`
-	Endereco    string             `bson:"endereco"`
-	ListDividas []string           `bson:"listDividas"`
+	Endereco    []byte             `bson:"endereco"`
+	ListDividas []DividaEncrypt    `bson:"listDividas"`
+}
+
+type DividaEncrypt struct {
+	Descricao []byte `bson:"descricao"`
 }
