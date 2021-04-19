@@ -22,5 +22,10 @@ func (context Context) CreateConnection() *mongo.Client {
 		log.Fatal(err)
 	}
 
+	err = client.Ping(context.CTX, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	return client
 }
